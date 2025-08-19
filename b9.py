@@ -1,6 +1,6 @@
 # // 2348. Number of Zero-Filled Subarrays (19/08/2025)
 class Solution:
-    def zeroFilledSubarray(self, nums: List[int]) -> int:
+    def zeroFilledSubarray(self, nums) -> int:
 
         # 1 = 1
         # 2 = 3
@@ -49,9 +49,9 @@ class Solution:
 #     * Nếu `num` khác `0`, điều này có nghĩa là chuỗi số 0 liên tiếp vừa kết thúc.
 
 # 3.  **Tính toán và cộng dồn**:
-    * Khi chuỗi số 0 kết thúc (do gặp một số khác 0), thuật toán sẽ tính toán số dãy con từ chuỗi đó. Số dãy con từ một chuỗi có độ dài `n` là tổng của các số nguyên từ 1 đến `n`, công thức là `n * (n + 1) / 2`.
-    * Công thức này chính là lý do bạn thấy các dòng ghi chú như `# 1 = 1`, `# 2 = 3`, `# 3 = 6`, ... trong đoạn mã.
-    * Giá trị này được cộng vào biến `total`. Sau đó, `length_of_zero` được **đặt lại về 0** để bắt đầu đếm chuỗi số 0 mới.
+    # * Khi chuỗi số 0 kết thúc (do gặp một số khác 0), thuật toán sẽ tính toán số dãy con từ chuỗi đó. Số dãy con từ một chuỗi có độ dài `n` là tổng của các số nguyên từ 1 đến `n`, công thức là `n * (n + 1) / 2`.
+    # * Công thức này chính là lý do bạn thấy các dòng ghi chú như `# 1 = 1`, `# 2 = 3`, `# 3 = 6`, ... trong đoạn mã.
+    # * Giá trị này được cộng vào biến `total`. Sau đó, `length_of_zero` được **đặt lại về 0** để bắt đầu đếm chuỗi số 0 mới.
 
 # 4.  **Xử lý trường hợp cuối cùng**:
 #     * Vòng lặp `for` sẽ kết thúc, nhưng có khả năng mảng kết thúc bằng một hoặc nhiều số 0.
