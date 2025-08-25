@@ -1,5 +1,5 @@
 # 498. Diagonal Traverse (25/08/2025)
-
+from typing import List
 class Solution:
     def findDiagonalOrder(self, mat: list[list[int]]) -> list[int]:
         if not mat or not mat[0]:
