@@ -26,7 +26,7 @@
 
 ### Chú thích chi tiết từng dòng mã
 
-
+from typing import List
 class Solution:
     def sortMatrix(self, grid: List[List[int]]) -> List[List[int]]:
         n = len(grid) # Lấy kích thước của ma trận (giả sử là ma trận vuông n x n)
