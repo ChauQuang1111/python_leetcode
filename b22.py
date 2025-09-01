@@ -126,4 +126,21 @@ class Solution:
 # * Tỷ lệ đỗ của Lớp 2: `0.6`
 # * Tỷ lệ đỗ trung bình: `(0.667 + 0.6) / 2 = 0.6335`.
 
-# Để giải quyết bài toán này một cách hiệu quả, bạn có thể sử dụng một cấu trúc dữ liệu ưu tiên (priority queue) để luôn tìm được lớp có lợi ích cao nhất một cách nhanh chóng.
+# # Để giải quyết bài toán này một cách hiệu quả, bạn có thể sử dụng một cấu trúc dữ liệu ưu tiên (priority queue) để luôn tìm được lớp có lợi ích cao nhất một cách nhanh chóng.
+# Hiểu đơn giản, **`_`** là một biến tạm thời trong Python. Nó là một quy ước để nói với bạn và những người đọc code khác rằng "tôi không quan tâm đến giá trị này".
+
+# Trong đoạn code của bạn:
+# `_, p, t = heappop(cls)`
+
+# Hàm `heappop(cls)` trả về một tuple có 3 giá trị, ví dụ: `(10, 20, 30)`.
+
+# Khi bạn viết `_, p, t = ...`, Python sẽ thực hiện việc gán giá trị như sau:
+# * Giá trị đầu tiên (10) được gán cho `_` (và sau đó bị bỏ qua).
+# * Giá trị thứ hai (20) được gán cho `p`.
+# * Giá trị thứ ba (30) được gán cho `t`.
+
+# Bạn có thể coi `_` như một cái "hố đen" để vứt những giá trị không cần dùng đến. Mục đích chính là làm cho code trở nên ngắn gọn và dễ hiểu hơn, vì nó giúp bạn tập trung vào những biến (`p` và `t`) mà bạn thực sự muốn sử dụng.
+
+# Nếu không dùng `_`, bạn sẽ phải đặt một tên biến khác, ví dụ:
+# `temp, p, t = heappop(cls)`
+# Nhưng điều này có thể gây nhầm lẫn vì biến `temp` không được sử dụng ở bất kỳ đâu sau đó. Do đó, `_` là một cách gọn gàng và chuẩn mực hơn để thể hiện ý định của bạn.
