@@ -21,7 +21,29 @@ class Solution:
             
         return result
 
+# Đây là một câu hỏi rất hay. Dòng code `if n % 2 == 1: result.append(0)` là để xử lý trường hợp đặc biệt khi `n` là một số lẻ.
 
+# Hãy xem lại mục tiêu của chúng ta: **tạo `n` số nguyên duy nhất có tổng bằng 0.**
+
+# ### Tại sao cần thêm số 0?
+
+# Thuật toán chính của bạn là tạo ra các cặp số đối nhau (ví dụ: `[1, -1]`, `[2, -2]`). Tổng của mỗi cặp này luôn bằng 0.
+
+# * **Khi `n` là số chẵn**:
+#     * Ví dụ: `n = 4`.
+#     * Bạn cần 4 số.
+#     * Vòng lặp `for` sẽ tạo ra `4 / 2 = 2` cặp số đối nhau: `[1, -1]` và `[2, -2]`.
+#     * Kết quả là `[1, -1, 2, -2]`. Tổng của chúng là `0`, và có đủ 4 số. Mọi thứ đều hoàn hảo, không cần làm gì thêm.
+
+# * **Khi `n` là số lẻ**:
+#     * Ví dụ: `n = 5`.
+#     * Bạn cần 5 số.
+#     * Vòng lặp `for` sẽ tạo ra `5 // 2 = 2` cặp số đối nhau: `[1, -1]` và `[2, -2]`.
+#     * Lúc này, bạn mới có 4 số. Tổng của chúng là `0`, nhưng bạn **thiếu một số**.
+#     * Số bạn cần thêm vào phải là một số duy nhất và không làm thay đổi tổng. **Số 0** là lựa chọn hoàn hảo.
+#     * Sau khi thêm `0`, mảng trở thành `[1, -1, 2, -2, 0]`. Tổng vẫn bằng `0`, và bây giờ bạn đã có đủ 5 số duy nhất.
+
+# Vì vậy, dòng code `if n % 2 == 1:` là điều kiện để kiểm tra nếu `n` là số lẻ (phép chia cho 2 có dư là 1). Nếu đúng, nó sẽ thêm số 0 vào mảng để hoàn thành nhiệm vụ.
 # Đây là một câu hỏi rất hay. Dòng code `for i in range(1, n // 2 + 1):` có thể hơi khó hiểu nếu bạn chưa quen với cách hoạt động của `range()` và phép chia lấy phần nguyên `//`.
 
 # Hãy cùng đi qua một ví dụ cụ thể để bạn thấy nó hoạt động như thế nào.
