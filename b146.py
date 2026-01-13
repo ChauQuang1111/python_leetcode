@@ -87,33 +87,34 @@
 
 # ```python
 from typing import List
+from collections import defaultdict
+from itertools import pairwise
+
 class Solution:
     def separateSquares(self, squares: List[List[int]]) -> float:
-        from collections import defaultdict
-        from itertools import pairwise
-
         total_area = 0                   # Tổng diện tích tất cả hình vuông
         diff = defaultdict(int)          # Difference array theo trục Y
 
         # Xây diff array
         for _, y, l in squares:
-            total_area += l * l          # cộng diện tích hình vuông
-            diff[y] += l                 # bắt đầu square tại y
-            diff[y + l] -= l             # kết thúc square tại y + l
+            total_area += l * l          # Cộng diện tích hình vuông
+            diff[y] += l                 # Square bắt đầu tại y
+            diff[y + l] -= l             # Square kết thúc tại y + l
 
-        area = 0                         # diện tích đã quét
-        s = 0                            # tổng chiều dài cạnh đang hoạt động
+        area = 0                         # Diện tích đã quét từ dưới lên
+        s = 0                            # Tổng chiều dài cạnh đang "active"
 
-        # Duyệt các mốc y đã sắp xếp
+        # Quét theo trục Y
         for y, y2 in pairwise(sorted(diff)):
-            s += diff[y]                 # cập nhật chiều dài tại mức y
-            area += s * (y2 - y)         # diện tích lát cắt [y, y2)
+            s += diff[y]                 # Cập nhật chiều dài tại mức y
+            area += s * (y2 - y)         # Diện tích lát cắt [y, y2)
 
-            # Nếu diện tích >= 1/2 tổng diện tích
+            # Nếu đã đạt >= 1/2 tổng diện tích
             if area * 2 >= total_area:
-                # Nội suy để tìm chính xác tọa độ y
                 excess = area * 2 - total_area
+                # Nội suy để tìm chính xác tọa độ y
                 return y2 - excess / (2 * s)
+
 # ```
 
 # ---
