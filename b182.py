@@ -1,4 +1,4 @@
-# ## 🧠 Giải thích đề bài: **Binary Number with Alternating Bits**
+# ## 🧠 Giải thích đề bài: **Binary Number with Alternating Bits**(18/02/2026)
 
 # ### 1️⃣ Đề bài yêu cầu gì?
 
