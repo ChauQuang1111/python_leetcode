@@ -1,3 +1,4 @@
+# // Find the Prefix Common Array of Two Arrays(20/05/2026)
 # Bài yêu cầu bạn tạo ra một mảng mới dựa trên số lượng phần tử chung giữa 2 mảng tại từng prefix.
 
 # Đề bài nói gì?
